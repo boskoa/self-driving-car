@@ -26,7 +26,6 @@ class Controls {
         default:
           return;
       }
-      console.table(this);
     });
 
     document.addEventListener("keyup", (e) => {
@@ -46,8 +45,6 @@ class Controls {
         default:
           return;
       }
-
-      console.table(this);
     });
   }
 }
