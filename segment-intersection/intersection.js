@@ -26,7 +26,7 @@ function animate() {
   A.y = mouse.y - Math.sin(angle) * radius;
   B.x = mouse.x - Math.cos(angle) * radius;
   B.y = mouse.y + Math.sin(angle) * radius;
-  angle += 0.02;
+  angle += 0.0;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
