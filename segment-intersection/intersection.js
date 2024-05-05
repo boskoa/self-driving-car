@@ -1,15 +1,15 @@
-const canvas = document.getElementById("myCanvas");
+const carCanvas = document.getElementById("myCanvas");
 
-canvas.backgroundColor = "yellow";
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+carCanvas.backgroundColor = "yellow";
+carCanvas.width = window.innerWidth;
+carCanvas.height = window.innerHeight;
 
 const A = { x: 200, y: 150 };
 const B = { x: 150, y: 250 };
 const C = { x: 50, y: 100 };
 const D = { x: 250, y: 200 };
 
-const ctx = canvas.getContext("2d");
+const ctx = carCanvas.getContext("2d");
 
 let angle = 0;
 const mouse = { x: 0, y: 0 };
@@ -28,7 +28,7 @@ function animate() {
   B.y = mouse.y + Math.sin(angle) * radius;
   angle += 0.01;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, carCanvas.width, carCanvas.height);
   ctx.beginPath();
   ctx.moveTo(A.x, A.y);
   ctx.lineTo(B.x, B.y);
