@@ -16,6 +16,9 @@ class Visualizer {
           0,
           network.levels.length === 1 ? 0.5 : i / (network.levels.length - 1)
         );
+
+      ctx.setLineDash([7, 3]);
+
       Visualizer.drawLevel(
         ctx,
         network.levels[i],
@@ -23,7 +26,7 @@ class Visualizer {
         levelTop,
         width,
         levelHeight,
-        i === network.levels.length - 1 ? ["^", "ˇ", "<", ">"] : []
+        i === network.levels.length - 1 ? ["↟", "↞", "↠", "↡"] : []
       );
     }
   }
@@ -38,10 +41,10 @@ class Visualizer {
 
     for (let i = 0; i < inputs.length; i++) {
       for (let j = 0; j < outputs.length; j++) {
-        ctx.strokeStyle = getRGBA(weights[i][j]);
         ctx.beginPath();
         ctx.moveTo(Visualizer.#getNodeX(inputs, i, left, right), bottom);
         ctx.lineTo(Visualizer.#getNodeX(outputs, j, left, right), top);
+        ctx.strokeStyle = getRGBA(weights[i][j]);
         ctx.stroke();
       }
     }
@@ -81,12 +84,12 @@ class Visualizer {
         ctx.beginPath();
         ctx.textAlign = "center";
         ctx.baseLine = "middle";
-        ctx.fillStyle = "black";
-        ctx.strokeStyle = "white";
-        ctx.font = nodeRadius * 1.5 + "px Arial";
-        ctx.fillText(outputLabels[i], x, top + nodeRadius * 0.6);
-        ctx.lineWidth = 0.5;
-        ctx.strokeText(outputLabels[i], x, top + nodeRadius * 0.6);
+        ctx.fillStyle = "coral";
+        ctx.strokeStyle = "black";
+        ctx.font = nodeRadius * 1.4 + "px Arial";
+        ctx.fillText(outputLabels[i], x, top + nodeRadius * 0.4);
+        ctx.lineWidth = 0.3;
+        //ctx.strokeText(outputLabels[i], x, top + nodeRadius * 0.4);
       }
     }
   }

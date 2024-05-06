@@ -49,3 +49,24 @@ function getRGBA(value) {
 
   return `rgba(${R}, ${G}, ${B}, ${alpha})`;
 }
+
+function getRandomColor() {
+  const hue = 290 + Math.random() * 260;
+  return `hsl(${hue}, 100%, 60%)`;
+}
+
+function getPositions(count) {
+  const positions = [];
+
+  for (let i = 1; i < count * 2; i++) {
+    positions.push(i * -100);
+  }
+
+  return positions;
+}
+
+function getRandomLane(count) {
+  const lane = Math.round(Math.random() * (count - 1));
+
+  return lane;
+}
