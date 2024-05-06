@@ -59,7 +59,7 @@ function getPositions(count) {
   const positions = [];
 
   for (let i = 1; i < count * 2; i++) {
-    positions.push(i * -100);
+    positions.push(i * -130);
   }
 
   return positions;
